@@ -1,12 +1,6 @@
-import { useState, useEffect, Fragment } from "react";
-
-//translation
+import React, { useState, useEffect, Fragment } from "react";
 import { useTranslation } from "react-i18next";
-
-//Components
 import Button from "../ui/button/Button";
-
-//Style
 import "./Slogan.scss";
 
 const changeActivePhrase = (sentences, index) => {
@@ -32,18 +26,15 @@ function Slogan() {
 
   useEffect(() => {
     const timeout1 = setTimeout(() => {
-      const newsentences = changeActivePhrase(sentences, 1);
-      setSentences(newsentences);
-    }, 1000); // visualizza la frase "Solo fresco" dopo 2 secondi
+      setSentences((prevSentences) => changeActivePhrase(prevSentences, 1));
+    }, 1000);
 
     const timeout2 = setTimeout(() => {
-      const newsentences = changeActivePhrase(sentences, 2);
-      setSentences(newsentences);
+      setSentences((prevSentences) => changeActivePhrase(prevSentences, 2));
     }, 2000);
 
     const timeout3 = setTimeout(() => {
-      const newsentences = changeActivePhrase(sentences, 3);
-      setSentences(newsentences);
+      setSentences((prevSentences) => changeActivePhrase(prevSentences, 3));
     }, 3000);
 
     return () => {
@@ -51,7 +42,7 @@ function Slogan() {
       clearTimeout(timeout2);
       clearTimeout(timeout3);
     };
-  }, []);
+  }, []); // Aggiunto l'array delle dipendenze vuoto per risolvere il warning
 
   const discover = () => {
     const discoverContainer = document.querySelector(".container_discover");

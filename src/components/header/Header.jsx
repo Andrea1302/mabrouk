@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
-//Style
 import "./Header.scss";
-
-//logo
 import logoMabrouk from "../../assets/imgs/logoMabrouk.png";
-//flags
 import itaLang from "../../assets/imgs/itaLang.png";
 import ukFlag from "../../assets/imgs/ukFlag.png";
-
-//Routes
 import routes from "../../routes";
 import { useTranslation } from "react-i18next";
 
@@ -67,7 +60,6 @@ const Header = () => {
 
   useEffect(() => {
     function handleResize() {
-      // Set window width
       setWidth(window.innerWidth);
     }
 
@@ -87,11 +79,10 @@ const Header = () => {
         setInscroll(false);
       }
     }
-    // Add event listener
+
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
 
-    // Remove event listener on cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
@@ -101,15 +92,12 @@ const Header = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const calcActiveLink = (text) => {
-      const copyLinks = [...links];
-      copyLinks.forEach((link) => {
-        if (link.routeLink === text) {
-          link.active = true;
-        } else {
-          link.active = false;
-        }
+      setLinks((prevLinks) => {
+        return prevLinks.map((link) => ({
+          ...link,
+          active: link.routeLink === text,
+        }));
       });
-      setLinks(copyLinks);
     };
 
     switch (pathname) {
@@ -137,42 +125,35 @@ const Header = () => {
     }
   };
 
-  const mappingLinks = (link) => {
-    return (
-      <li
-        onClick={goTo(link.routeLink)}
-        className={link.active ? "active" : undefined}
-        key={link.text}
-      >
-        {t(link.text)}
-      </li>
-    );
-  };
+  const mappingLinks = (link) => (
+    <li
+      onClick={goTo(link.routeLink)}
+      className={link.active ? "active" : undefined}
+      key={link.text}
+    >
+      {t(link.text)}
+    </li>
+  );
 
   const changeLang = (id) => () => {
-    const copyLangs = [...langs];
-    copyLangs.forEach((lang) => {
-      if (lang.id === id) {
-        lang.active = true;
-      } else {
-        lang.active = false;
-      }
+    setLangs((prevLangs) => {
+      return prevLangs.map((lang) => ({
+        ...lang,
+        active: lang.id === id,
+      }));
     });
-    setLangs(copyLangs);
     i18n.changeLanguage(id);
   };
 
-  const mappingLang = (lang) => {
-    return (
-      <img
-        onClick={changeLang(lang.id)}
-        key={lang.id}
-        className={!lang.active ? "lang notActive" : "lang"}
-        src={lang.src}
-        alt={lang.alt}
-      />
-    );
-  };
+  const mappingLang = (lang) => (
+    <img
+      onClick={changeLang(lang.id)}
+      key={lang.id}
+      className={!lang.active ? "lang notActive" : "lang"}
+      src={lang.src}
+      alt={lang.alt}
+    />
+  );
 
   const setScrollClassName = () => {
     if (pathname !== "/") {
