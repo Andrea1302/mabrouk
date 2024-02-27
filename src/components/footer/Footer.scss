@@ -1,0 +1,108 @@
+@import "../../global.scss";
+
+footer {
+  background-color: $secondary-color;
+  padding: 60px 40px;
+  color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  .title {
+    font-size: 28px;
+    color: $gold-color;
+    font-family: $title-font;
+    margin-bottom: 70px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .container_footer {
+    height: 100%;
+    display: flex;
+    font-size: 18px;
+    width: 100%;
+    flex-wrap: wrap;
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 8px;
+        a {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
+    .icon_footer {
+      display: inline-block;
+      margin-right: 30px;
+      font-size: 30px;
+    }
+    .item_footer {
+      width: calc(100% / 3);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+    .item_footer.center {
+      border-right: 1px solid $primary-color;
+      border-left: 1px solid $primary-color;
+    }
+    .social.item_footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .social {
+      .title_social {
+        margin-bottom: 16px;
+        font-size: 18px;
+        display: inline-block;
+      }
+      .social_icon {
+        font-size: 40px;
+        a {
+          text-decoration: none;
+          color: $primary-color;
+        }
+        ion-icon {
+          margin-right: 32px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            color: $gold-color;
+            transition: 0.3s;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  footer {
+    .title {
+      text-align: start;
+    }
+    .container_footer {
+      flex-direction: column;
+      font-size: 14px;
+      .item_footer {
+        width: 100%;
+        margin-bottom: 32px;
+        justify-content: flex-start;
+      }
+      .item_footer.center {
+        margin-bottom: 60px;
+        border-left: unset;
+        border-right: unset;
+        border-bottom: 1px solid $primary-color;
+        padding: 24px 0;
+      }
+      .social.item_footer {
+        align-items: flex-start;
+        align-self: flex-end;
+        margin-bottom: unset;
+      }
+    }
+  }
+}

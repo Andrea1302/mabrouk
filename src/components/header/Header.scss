@@ -1,0 +1,144 @@
+@import "../../global.scss";
+
+header.inScroll {
+  background: rgba(39, 39, 39, 0.35);
+  backdrop-filter: blur(4px);
+  transition: 1s;
+}
+header.inScroll.hundred {
+  background: $secondary-color;
+  border-bottom: unset;
+  ion-icon {
+    color: #fff;
+  }
+}
+header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px 40px;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    ul {
+      display: flex;
+      li {
+        cursor: pointer;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 700;
+        color: #f5f5f5;
+        margin: 0 10px;
+        &:hover {
+          color: $gold-color;
+          transition: 0.2s;
+        }
+      }
+      li.active {
+        color: $gold-color;
+      }
+    }
+    .logo {
+      height: 8vh;
+      width: 8vh;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+  }
+
+  section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .lang {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 5px;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .lang.notActive {
+      transition: 0.5s;
+      transform: scale(0.6);
+    }
+  }
+  ion-icon {
+    font-size: 64px;
+    color: white;
+  }
+}
+@media screen and (max-height: 450px) {
+  header {
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    display: block;
+    nav {
+      justify-content: space-between;
+      .logo {
+        margin-right: 0px;
+      }
+    }
+    .dropdown_menu {
+      z-index: 3;
+      animation-name: open-dropdown;
+      animation-duration: 0.5s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: $secondary-color;
+      height: 100vh;
+      display: block;
+      padding: 30px;
+      .separator {
+        flex-grow: 1;
+      }
+      ion-icon {
+        cursor: pointer;
+      }
+      ul {
+        li {
+          cursor: pointer;
+          list-style: none;
+          font-size: 18px;
+          font-weight: 700;
+          color: #fff;
+          margin: 40px 0;
+          border-bottom: 1px solid #fff;
+          padding-bottom: 10px;
+        }
+        li.active {
+          border-color: $gold-color;
+          color: $gold-color;
+        }
+      }
+    }
+  }
+  header.inScroll {
+    background: rgb(167 160 160 / 35%);
+  }
+}
+
+@keyframes open-dropdown {
+  0% {
+    position: absolute;
+    left: -100vw;
+  }
+  100% {
+    position: absolute;
+    left: 0;
+  }
+}

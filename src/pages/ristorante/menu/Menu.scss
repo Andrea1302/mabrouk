@@ -1,0 +1,41 @@
+@import "../../../global";
+
+.menu_wrapper {
+  h6 {
+    margin-top: 10px;
+  }
+  .container_card_menu {
+    margin: 64px 0;
+    .card_menu {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      border-bottom: 2px solid $secondary-color;
+      .detail_menu {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        .tot_menu {
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+        }
+        .services_ul {
+          display: flex;
+          margin: 20px 0;
+          flex-direction: column;
+          flex-grow: 1;
+          li {
+            margin: 8px 0;
+          }
+        }
+      }
+      .default_img {
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+}

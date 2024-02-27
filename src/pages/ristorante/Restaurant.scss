@@ -1,0 +1,27 @@
+@import "../../_global.scss";
+
+.restaurant-container {
+  padding: 12vh 5vw 10vh;
+  h2 {
+    margin-bottom: 32px;
+  }
+  ul {
+    display: flex;
+    margin: 40px 0;
+    li {
+      list-style: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    li.first {
+      padding-right: 16px;
+      border-right: 2px solid $secondary-color;
+    }
+    li.second {
+      padding-left: 16px;
+    }
+    li.active {
+      font-weight: bold;
+    }
+  }
+}
