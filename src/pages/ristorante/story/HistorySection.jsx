@@ -14,7 +14,7 @@ const HistorySection = ({ paragraph, title, date }) => {
         borderRight: "7px solid  #262626",
       }}
       date={date}
-      iconStyle={{ background: "gold", color: "#262626" }}
+      iconStyle={{ background: "#e54141", color: "#262626" }}
     >
       <h3 className="vertical-timeline-element-title">{title}</h3>
 

@@ -39,6 +39,11 @@ const initialStateLinks = [
     active: false,
   },
   {
+    text: "header.galleria",
+    routeLink: "GALLERY",
+    active: false,
+  },
+  {
     text: "header.contatti",
     routeLink: "CONTATTI",
     active: false,
@@ -128,7 +133,7 @@ const Header = () => {
   const mappingLinks = (link) => (
     <li
       onClick={goTo(link.routeLink)}
-      className={link.active ? "active" : undefined}
+      className={link.active ? "active nav_font" : "nav_font"}
       key={link.text}
     >
       {t(link.text)}

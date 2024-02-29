@@ -6,10 +6,11 @@ footer {
   color: $primary-color;
   display: flex;
   flex-direction: column;
+  font-family: $default-font;
   .title {
+    font-family: $nav-title-font;
     font-size: 28px;
-    color: $gold-color;
-    font-family: $title-font;
+    color: $lobster-color;
     margin-bottom: 70px;
     font-weight: 700;
     text-align: center;
@@ -55,6 +56,7 @@ footer {
         margin-bottom: 16px;
         font-size: 18px;
         display: inline-block;
+        font-family: $nav-title-font;
       }
       .social_icon {
         font-size: 40px;
@@ -68,7 +70,7 @@ footer {
           transition: 0.3s;
 
           &:hover {
-            color: $gold-color;
+            color: $lobster-color;
             transition: 0.3s;
             transform: scale(1.1);
           }

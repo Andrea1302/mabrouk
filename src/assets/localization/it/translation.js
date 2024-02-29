@@ -3,10 +3,11 @@ export const TRANSLATIONS_IT = {
     discoverMore: "SCOPRI DI PIù",
   },
   header: {
-    escursioni: "ESCURSIONI",
-    ristorante: "RISTORANTE",
-    homepage: "HOMEPAGE",
-    contatti: "CONTATTI",
+    escursioni: "Escursione",
+    ristorante: "Ristorante",
+    homepage: "Homepage",
+    contatti: "Contatti",
+    galleria: "Galleria",
   },
   card: {
     ristorante: {
@@ -15,15 +16,13 @@ export const TRANSLATIONS_IT = {
         "Solo pesce,solo fresco, solo la sera è il nostro motto e racchiude uno stile di vita che più ci rappresenta da più di 25 anni!",
     },
     escursioni: {
-      titolo: "LE NOSTRE ESCURSIONI",
+      titolo: "LA NOSTRA ESCURSIONE",
       descrizione:
         "Dal 2022 è possibile assaporare le nostre specialità direttamente in mezzo al mare !",
     },
   },
   discover: {
-    titolo: "Due servizi diversi, stessa qualità!",
-    sottotitolo:
-      "Scopri di più sul nostro ristorante e sulle nostre escursioni",
+    titolo: "Le nostre attività",
   },
   ristorante: {
     storyLink: "La nostra storia",
@@ -33,7 +32,7 @@ export const TRANSLATIONS_IT = {
       titolo: "Le nostre proposte",
       sottotitolo:
         "Il nostro ristorante offre un menù fisso, si tratta di una combinazione e sapori del nostro mare.",
-      disclaimer: "*In tutti i menù sono inclusi acqua e vino della casa",
+      disclaimer: "*In tutti i menù è inclusa l'acqua",
       prenotazione: "Solo su prenotazione",
       sceltaMenu:
         "La scelta del menù deve coincidere tra tutti i commensali del tavolo,per qualsiasi altra richiesta si è pregati di comunicarla in anticipo.",
