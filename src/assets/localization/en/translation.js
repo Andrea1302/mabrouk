@@ -3,7 +3,7 @@ export const TRANSLATIONS_EN = {
     discoverMore: "DISCOVER MORE",
   },
   header: {
-    escursioni: "Excursions",
+    escursioni: "Excursion",
     ristorante: "Restaurant",
     homepage: "Homepahe",
     contatti: "Contacts",
@@ -23,6 +23,9 @@ export const TRANSLATIONS_EN = {
   },
   discover: {
     titolo: "Our activities",
+  },
+  gallery: {
+    titolo: "Take a look at what we do",
   },
   ristorante: {
     storyLink: "Our story",

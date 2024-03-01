@@ -122,11 +122,17 @@ const Header = () => {
     if (isDropdownOpened) {
       setIsDropdownOpened(false);
     }
-    if (link !== "CONTATTI") {
-      navigate(routes[link]);
-    } else {
-      const contacts = document.querySelector("#contact-us");
-      contacts.scrollIntoView({ behavior: "smooth", block: "start" });
+    switch (link) {
+      case "CONTATTI":
+        const contacts = document.querySelector("#contact-us");
+        contacts.scrollIntoView({ behavior: "smooth", block: "start" });
+        break;
+      case "GALLERY":
+        navigate(routes.HOMEPAGE, { state: { moveTo: "#gallery" } });
+        break;
+      default:
+        navigate(routes[link]);
+        break;
     }
   };
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 //Style
 import "./Discover.scss";
@@ -13,6 +13,7 @@ import Card from "../card/Card";
 
 //Routes
 import routes from "../../routes";
+import { handleScrollAnimation } from "../../utils/animationUtils";
 
 const cards = [
   {
@@ -37,37 +38,19 @@ const cards = [
 
 const Discover = () => {
   const { t } = useTranslation();
-
   const cardRef = useRef();
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        const windowHeight =
-          window.innerHeight || document.documentElement.clientHeight;
-
-        const isPartiallyVisibleVertically =
-          rect.top < windowHeight && rect.bottom >= 0;
-
-        if (isPartiallyVisibleVertically) {
-          cardRef.current.classList.add("animate_card");
-        } else {
-          cardRef.current.classList.remove("animate_card");
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const cleanup = handleScrollAnimation(cardRef, "animate_card");
+    return cleanup;
   }, []);
 
   const mappingCard = (card, index) => {
     if (index === 0) {
       return (
-        <>
+        <Fragment key={card.id}>
           <Card product={card} /> <div className="separator"></div>
-        </>
+        </Fragment>
       );
     } else {
       return <Card key={card.id} product={card} />;

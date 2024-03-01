@@ -67,6 +67,13 @@ const Footer = () => {
           </div>
         </div>
       </section>
+      <section className="legal">
+        <div className="developed_by">
+          <span>Mabrouk srl p.iva xyzaococns</span>
+          <span className="separator">|</span>
+          <span>Developed By Andrea Scarpa</span>
+        </div>
+      </section>
     </footer>
   );
 };

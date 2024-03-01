@@ -24,6 +24,9 @@ export const TRANSLATIONS_IT = {
   discover: {
     titolo: "Le nostre attività",
   },
+  gallery: {
+    titolo: "Dai uno sguardo a quello che facciamo",
+  },
   ristorante: {
     storyLink: "La nostra storia",
     menuLink: "Il nostro menù",

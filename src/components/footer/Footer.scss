@@ -1,8 +1,9 @@
 @import "../../global.scss";
 
 footer {
+  position: relative;
   background-color: $secondary-color;
-  padding: 60px 40px;
+  padding: 150px 40px;
   color: $primary-color;
   display: flex;
   flex-direction: column;
@@ -78,10 +79,28 @@ footer {
       }
     }
   }
+  .legal {
+    position: absolute;
+    bottom: 10px;
+    font-size: 9px;
+    width: 100%;
+    right: 0;
+    padding: 0 40px;
+    .developed_by {
+      display: flex;
+      justify-content: center;
+    }
+    .separator {
+      display: inline-block;
+      margin: 0 15px;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
   footer {
+    padding: 60px 40px;
+
     .title {
       text-align: start;
     }
@@ -104,6 +123,15 @@ footer {
         align-items: flex-start;
         align-self: flex-end;
         margin-bottom: unset;
+      }
+    }
+    .legal {
+      .developed_by {
+        display: flex;
+        justify-content: space-between;
+      }
+      .separator {
+        display: none;
       }
     }
   }

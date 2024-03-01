@@ -28,9 +28,6 @@ video {
       flex-shrink: 1;
     }
   }
-  .discover_more.animate_card {
-    animation: enter 1.5s;
-  }
 }
 
 @media screen and (max-height: 450px) {
@@ -48,16 +45,5 @@ video {
         margin: 40px 0;
       }
     }
-  }
-}
-
-@keyframes enter {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
