@@ -17,7 +17,8 @@ const HomePage = () => {
       const gallery = document.querySelector(moveTo);
       gallery.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }, []);
+  }, [moveTo]);
+
   return (
     <>
       <section className="homepage_first_section">
