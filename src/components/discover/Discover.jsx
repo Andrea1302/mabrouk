@@ -1,9 +1,11 @@
 import { Fragment, useEffect, useRef } from "react";
+
+//Translations
 import { useTranslation } from "react-i18next";
 //Style
 import "./Discover.scss";
 
-//imgs
+//images
 import restaurant from "../../assets/imgs/Ristorante.jpg";
 import boat from "../../assets/imgs/barca.jpeg";
 import iconLogo from "../../assets/imgs/icon-logo.png";
@@ -13,6 +15,8 @@ import Card from "../card/Card";
 
 //Routes
 import routes from "../../routes";
+
+//Utils
 import { handleScrollAnimation } from "../../utils/animationUtils";
 
 const cards = [

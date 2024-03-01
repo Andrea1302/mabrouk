@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
+//Translations
+import { useTranslation } from "react-i18next";
+
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
@@ -16,8 +19,9 @@ import img3 from "../../assets/imgs/aragosta2.jpg";
 import img4 from "../../assets/imgs/barca.jpeg";
 import img5 from "../../assets/imgs/lob.jpg";
 import img6 from "../../assets/imgs/lobster.jpg";
+
+//Utils
 import { handleScrollAnimation } from "../../utils/animationUtils";
-import { useTranslation } from "react-i18next";
 
 const images = [
   { id: 1, src: img1, alt: "", active: true },
