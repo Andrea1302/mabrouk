@@ -6,7 +6,11 @@ import { useTranslation } from "react-i18next";
 //Style
 import "./Card.scss";
 
-const Card = ({ product, ref }) => {
+//Loghi
+import LogoExcursion from "../../assets/imgs/LogoEscursione";
+import LogoRestaurant from "../../assets/imgs/LogoMabrouk";
+
+const Card = ({ product }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const goTo = (product) => () => {
@@ -14,13 +18,11 @@ const Card = ({ product, ref }) => {
   };
   return (
     <article className="card">
-      <img
-        className="logo"
-        onClick={goTo(product)}
-        src={product.logo}
-        alt={"logo" + product.alt}
-      ></img>
-      {/* <img className="card_img" src={product.src} alt={product.alt} /> */}
+      {product.id === 1 ? (
+        <LogoRestaurant onClick={goTo(product)} className="logo" />
+      ) : (
+        <LogoExcursion onClick={goTo(product)} className="logo" />
+      )}
       <div className="container_description">
         <div className="title">{t(product.title)}</div>
         <p>{t(product.description)}</p>

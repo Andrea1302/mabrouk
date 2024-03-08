@@ -8,7 +8,6 @@ import "./Discover.scss";
 //images
 import restaurant from "../../assets/imgs/Ristorante.jpg";
 import boat from "../../assets/imgs/barca.jpeg";
-import iconLogo from "../../assets/imgs/icon-logo.png";
 
 //Component
 import Card from "../card/Card";
@@ -27,7 +26,6 @@ const cards = [
     title: "card.ristorante.titolo",
     link: routes.RESTAURANT,
     description: "card.ristorante.descrizione",
-    logo: iconLogo,
   },
   {
     id: 2,
@@ -36,7 +34,6 @@ const cards = [
     title: "card.escursioni.titolo",
     link: routes.ESCURSIONI,
     description: "card.escursioni.descrizione",
-    logo: iconLogo,
   },
 ];
 
